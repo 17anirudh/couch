@@ -1,0 +1,1 @@
+export const API_URL: string = process.env.NEXT_BACKEND_URL as string

@@ -20,7 +20,9 @@
       "@lib/*": ["./lib/*"],
       "@styles/*": ["./styles/*"],
       "@types/*": ["./types/*"],
-      "@context/*": ["./context/*"]
+      "@context/*": ["./context/*"],
+      "@api/*": ["./app/api/*"]
+
     }
   },
   "include": [

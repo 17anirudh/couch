@@ -1,28 +1,33 @@
 import Image from "next/image";
-import GradientWaves from "@/components/gradient-waves";
 import { Button } from "@/components/ui/button";
-import { ModeToggle } from "@/components/theme-provider";
-
-{/* <a href="https://www.flaticon.com/free-icons/sofa" title="sofa icons">Sofa icons created by Magnific - Flaticon</a> */}
+import Link from "next/link";
 
 export default function () {
   return (
     <>
-    <ModeToggle className="absolute top-4 right-4" />
-      <GradientWaves />
-      <main className="flex-1 flex flex-col w-full min-h-screen gap-5 items-center justify-center z-10">
+      <video 
+        src="/background.mp4" 
+        autoPlay 
+        loop 
+        muted 
+        className="absolute inset-0 w-screen h-screen object-cover -z-50"
+      />
+      <main className="flex-1 flex flex-col w-full min-h-screen gap-5 items-center justify-center z-10 text-white">
         <Image 
-          src="/logo.png"
+          src="/logo.webp"
           alt="Logo"
-          width={81}
-          height={81}
+          width={150}
+          height={150}
           priority
+          className="rounded-xl w-auto h-auto hover:scale-110 active:scale-90 transition-transform duration-200"
         />
-        <h1 className="text-6xl font-bold font-serif">Couch</h1>
-        <h2 className="text-2xl font-serif">Deterministic AI platform to tailor resumes</h2>
+        <h1 className="text-6xl font-bold font-serif text-white">Couch</h1>
+        <h2 className="text-2xl font-serif">Deterministic AI platform to tailor and track applications</h2>
         <section id="cta" className="flex gap-4">
-          <Button variant="default" className="rounded-xl p-5">Get Started</Button>
-          <Button variant="secondary" className="rounded-xl p-5">Learn More</Button>
+          <Button variant="default" className="rounded-xl p-5 hover:scale-110 active:scale-90 transition-transform duration-200" render={
+            <Link href="/auth/register">Get Started</Link>
+          } />
+          <Button variant="secondary" className="rounded-xl p-5 hover:scale-110 active:scale-90 transition-transform duration-200">Learn More</Button>
         </section>
       </main>      
     </>

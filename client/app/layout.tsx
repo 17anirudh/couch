@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Roboto_Slab } from "next/font/google";
-import "@styles/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import RootProvider from "@/context/RootProvider";
+import { Toaster } from "@/components/ui/sonner";
+import "@styles/globals.css";
 
 const robotoSlabSerif = Roboto_Slab({ subsets: ['latin'], variable: '--font-serif' });
 const geistSans = Geist({ variable: "--font-sans", subsets: ["latin"] });
@@ -10,12 +11,12 @@ const geistMono = Geist_Mono({ variable: "--font-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Couch",
-  description: "Deterministic AI platform to tailor resumes",
+  description: "Deterministic AI platform to tailor and track applications",
   icons: [
     {
-      url: "/logo.png",
-      sizes: "64x64",
-      type: "image/png"
+      url: "/logo.webp",
+      sizes: "612x459",
+      type: "image/webp"
     }
   ]
 };
@@ -33,6 +34,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           >
             {children}
           </ThemeProvider>
+          <Toaster closeButton richColors />
         </RootProvider>
       </body>
     </html>
