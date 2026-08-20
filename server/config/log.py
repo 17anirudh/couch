@@ -1,5 +1,7 @@
 import logging
+
 from rich.logging import RichHandler
+
 
 def setup_logging():
     # Define logging level

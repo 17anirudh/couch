@@ -10,6 +10,8 @@ wheels/
 
 # Virtual environments
 .venv
+.ropeproject
+.ruff_cache
 
 # Environment variables
 .env
